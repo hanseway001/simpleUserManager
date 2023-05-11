@@ -1,0 +1,15 @@
+{
+  "name": "simpleusermanager",
+  "version": "1.0.0",
+  "description": "Class assignment using pug",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wayne Hansen",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pug": "^3.0.2"
+  }
+}
