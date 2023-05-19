@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body 
+        h1 The following users are available
+        table  
+            tr  
+                th User Name 
+                th Name 
+                th email 
+                th age 
+            each user in users
+                tr 
+                    td #{user.userName}
+                    td #{user.name}  
+                    td #{user.email} 
+                    td #{user.age}
+                    td 
+                        form(action="/edit", method="post")
+                            input(value=user.uniqueId type="hidden" name="uniqueId")
+                            button(type="submit") edit
+                    td  
+                        form(action="/removeUser", method="post") 
+                            input(value=user.uniqueId type="hidden" name="uniqueId")
+                            button(type="submit") delete
+        div
+            a(href="/") Add new user
