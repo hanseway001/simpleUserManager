@@ -27,16 +27,11 @@ app.post('/removeUser', (req, res) => {
     let id =  req.body.uniqueId
     let jsonData = loadUsers()
     let users = jsonData.users
-    console.log(id)
-    console.log(users);
     let someone = users.find( user => user.uniqueId === id )
-    console.log(`someone: ${someone}`)
     let userIndex = users.indexOf(someone)
 
-    console.log(userIndex)
     users.splice(userIndex, 1)
     jsonData.users=users
-
     saveUsers(jsonData)
 
     res.redirect('userListing')
@@ -62,9 +57,9 @@ app.post('/create', (req, res) => {
         email: req.body.email,
         age: req.body.age
     }
+
     users.push(user)
     jsonData.users = users
-
     saveUsers(jsonData)
     res.redirect('/userListing')
 })
@@ -83,9 +78,9 @@ app.post('/update', (req, res) => {
         email: req.body.email,
         age: req.body.age
     }
+
     users.splice(userIndex, 1, user)
     jsonData.users = users
-
     saveUsers(jsonData)
     res.redirect('/userListing')
 })
